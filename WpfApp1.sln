@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{DACD27BE-CE0C-4FF5-BA3F-64B7C46DF609}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTestFlaUI", "ConsoleTestFlaUI\ConsoleTestFlaUI.csproj", "{0B755906-D4B2-4C60-85D6-92F3B951094F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{C6B823F1-F41D-4788-B4E3-138288CE148E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DACD27BE-CE0C-4FF5-BA3F-64B7C46DF609}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DACD27BE-CE0C-4FF5-BA3F-64B7C46DF609}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DACD27BE-CE0C-4FF5-BA3F-64B7C46DF609}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DACD27BE-CE0C-4FF5-BA3F-64B7C46DF609}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B755906-D4B2-4C60-85D6-92F3B951094F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B755906-D4B2-4C60-85D6-92F3B951094F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B755906-D4B2-4C60-85D6-92F3B951094F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B755906-D4B2-4C60-85D6-92F3B951094F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6B823F1-F41D-4788-B4E3-138288CE148E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6B823F1-F41D-4788-B4E3-138288CE148E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6B823F1-F41D-4788-B4E3-138288CE148E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6B823F1-F41D-4788-B4E3-138288CE148E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {184BBC8E-B326-4BCB-9CB6-1B866EAA5900}
+	EndGlobalSection
+EndGlobal
