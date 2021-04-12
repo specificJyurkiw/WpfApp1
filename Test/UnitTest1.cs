@@ -1,3 +1,4 @@
+using FlaUI.Core.AutomationElements;
 using FlaUI.UIA3;
 using NUnit.Framework;
 
@@ -22,12 +23,37 @@ namespace Test
         [Test]
         public void Test1()
         {
-            using (var automation = new UIA3Automation())
+            using (UIA3Automation automation = new UIA3Automation())
             {
-                var window = app.GetMainWindow(automation);
+                Window window = app.GetMainWindow(automation);
                 Assert.That(window.Title.CompareTo("MainWindow") == 0);
             }
-            app.Close();
+        }
+
+        [Test]
+        public void Test2()
+        {
+            using (UIA3Automation automation = new UIA3Automation())
+            {
+                Window window = app.GetMainWindow(automation);
+                AutomationElement displayButton = window.FindFirstDescendant(fe => fe.ByAutomationId("displayButton"));
+                Button db = displayButton.AsButton();
+
+                //Assert.IsTrue(dl.Text.Length == 0);
+                db.Click();
+
+                AutomationElement displayLabel = window.FindFirstDescendant(fe => fe.ByAutomationId("displayLabel"));
+                int ms = 0;
+                while (displayLabel == null && ms < 2000)
+                {
+                    System.Threading.Thread.Sleep(100);
+                    ms += 100;
+                    displayLabel = window.FindFirstDescendant(fe => fe.ByAutomationId("displayLabel"));
+                }
+                Assert.IsNotNull(displayLabel);
+                Label dl = displayLabel.AsLabel();
+                Assert.IsTrue(dl.Text.Length > 0);
+            }
         }
     }
 }

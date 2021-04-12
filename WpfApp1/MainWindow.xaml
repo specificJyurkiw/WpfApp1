@@ -8,7 +8,9 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Label Content="Message" HorizontalAlignment="Left" Margin="236,169,0,0" VerticalAlignment="Top" AutomationProperties.AutomationId="messagelabel" />
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="298,173,0,0" TextWrapping="Wrap" Text="Hello World!" VerticalAlignment="Top" Width="120" AutomationProperties.AutomationId="messagetextbox" />
+        <TextBox x:Name="DataText" HorizontalAlignment="Left" Height="23" Margin="298,173,0,0" TextWrapping="Wrap" Text="Hello World!" VerticalAlignment="Top" Width="120" AutomationProperties.AutomationId="messagetextbox" />
+        <Label x:Name="DisplayLabel" Content="" HorizontalAlignment="Left" Margin="329,264,0,0" VerticalAlignment="Top" AutomationProperties.AutomationId="displayLabel"/>
+        <Button x:Name="DisplayButton" Content="Display" HorizontalAlignment="Left" Margin="468,173,0,0" VerticalAlignment="Top" Width="75" AutomationProperties.AutomationId="displayButton" Click="DisplayButton_Click"/>
 
     </Grid>
 </Window>

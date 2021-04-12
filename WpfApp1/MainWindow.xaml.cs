@@ -20,9 +20,20 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        public TextBox dataBox;
+        public Label displayLabel;
+
         public MainWindow()
         {
             InitializeComponent();
+            dataBox = (TextBox)this.FindName("DataText");
+            displayLabel = (Label)this.FindName("DisplayLabel");
+        }
+
+        private void DisplayButton_Click(object sender, RoutedEventArgs e)
+        {
+            displayLabel.Content = dataBox.Text;
+            dataBox.Text = "";
         }
     }
 }
