@@ -1,12 +1,16 @@
 using FlaUI.Core.AutomationElements;
 using FlaUI.UIA3;
 using NUnit.Framework;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace Test
 {
     public class Tests
     {
         private FlaUI.Core.Application app;
+        private readonly string apiUrl = System.Environment.GetEnvironmentVariable("APPVEYOR_API_URL");
 
         [SetUp]
         public void Setup()
@@ -18,6 +22,19 @@ namespace Test
         public void TearDown()
         {
             app.Close();
+
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new System.Uri(apiUrl);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage response = client.PostAsJsonAsync("api/build/messages", new Dictionary<string, string>()
+                {
+                    { "message", "test" },
+                    { "category", "info" },
+                    { "details", "blerg" }
+                }).Result;
+            }
         }
 
         [Test]
