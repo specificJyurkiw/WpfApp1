@@ -1,6 +1,7 @@
 using FlaUI.Core.AutomationElements;
 using FlaUI.UIA3;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -33,12 +34,12 @@ namespace Test
                     { "testName", TestContext.CurrentContext.Test.Name },
                     { "testFramework", "NUnit3" },
                     { "fileName", TestContext.CurrentContext.Test.ClassName },
-                    { "outcome", TestContext.CurrentContext.Result.Outcome.Status.ToString() },
+                    { "outcome", TestStatus.Failed.ToString() },
                     { "durationMilliseconds", "12" },
-                    { "ErrorMessage", "" },
-                    { "ErrorStackTrace", "" },
-                    { "StdOut", "" },
-                    { "StdErr", "" }
+                    { "ErrorMessage", "Something went wrong" },
+                    { "ErrorStackTrace", "stacktrace here!" },
+                    { "StdOut", "Whoop! There it is!" },
+                    { "StdErr", "Oh noes!" }
                 }).Result;
             }
         }
