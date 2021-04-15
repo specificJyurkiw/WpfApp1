@@ -28,11 +28,17 @@ namespace Test
                 client.BaseAddress = new System.Uri(apiUrl);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = client.PostAsJsonAsync("api/build/messages", new Dictionary<string, string>()
+                HttpResponseMessage response = client.PostAsJsonAsync("api/tests", new Dictionary<string, string>()
                 {
-                    { "message", "test" },
-                    { "category", "info" },
-                    { "details", "blerg" }
+                    { "testName", TestContext.CurrentContext.Test.Name },
+                    { "testFramework", "NUnit3" },
+                    { "fileName", TestContext.CurrentContext.Test.ClassName },
+                    { "outcome", TestContext.CurrentContext.Result.Outcome.Status.ToString() },
+                    { "durationMilliseconds", "12" },
+                    { "ErrorMessage", "" },
+                    { "ErrorStackTrace", "" },
+                    { "StdOut", "" },
+                    { "StdErr", "" }
                 }).Result;
             }
         }
